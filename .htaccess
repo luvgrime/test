@@ -1,0 +1,9 @@
+DirectoryIndex index.php
+Options -Indexes
+php_flag register_globals off
+RewriteEngine On
+RewriteBase /test/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ /q/redirect.php?code=$1 [QSA,L]
